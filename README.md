@@ -1,4 +1,4 @@
-# dragonkin
+# newsletter
 
 > Vue based gaming newsletter page
 
