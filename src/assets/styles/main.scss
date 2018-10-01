@@ -1,0 +1,115 @@
+body {
+  background-color: #323145;
+}
+
+::placeholder {
+  color: #9d9acc;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #9d9acc;
+}
+
+::-ms-input-placeholder {
+  color: #9d9acc;
+}
+
+.page {
+  padding: $header-height + $page-padding-top $page-padding-side 0;
+
+  .tile-header {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+
+  .page-bg {
+    position: absolute;
+    opacity: .15;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: url('./assets/images/backgrounds/page.png') top center no-repeat;
+    background-size: contain;
+    top: $header-height;
+    z-index: -10;
+  }
+
+  .tiles {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    margin: $tile-margin * -1;
+  }
+
+  .tile {
+    margin: $tile-margin;
+
+    &.main {
+      flex-grow: 2;
+    }
+
+    &.news {
+      min-width: 445px;
+      flex-grow: 1;
+
+      .news-block {
+        height: 262px;
+        width: 100%;
+        border-radius: $block-border-radius;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 22px 40px rgba(36,35,51,.45);
+        margin-bottom: 42px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .news-info {
+          position: absolute;
+          bottom: 0;
+          padding: 13px 26px 30px;
+          background-color: rgba(36,35,51,.9);
+
+          .title {
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: .8px;
+            padding: 0;
+            margin: 0 0 7px 0;
+            font-size: 18px;
+          }
+
+          .description {
+            color: #9d9acc;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: .3px;
+            font-weight: 500;
+          }
+        }
+
+        .news-pic {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate3d(-58%, -42%, 0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .page {
+    .tiles {
+      margin: $tile-margin * -1 auto;
+    }
+  }
+}
